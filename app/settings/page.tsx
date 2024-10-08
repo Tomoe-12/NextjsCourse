@@ -1,10 +1,8 @@
-'use client'
-import React from 'react'
+"use client";
+import React from "react";
 
-const settings = () => {
-  return (
-    <div>settings</div>
-  )
-}
+const  settings =  () => {
+  return <div>settings</div>;
+};
 
-export default settings
+export default  settings;
