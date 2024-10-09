@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
   dashboard : React.ReactNode;
 }>) {
-  const isAdmin = true 
+  const isAdmin = false 
   return (
     <html lang="en">
       <body
