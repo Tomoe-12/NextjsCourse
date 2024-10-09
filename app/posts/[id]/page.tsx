@@ -8,6 +8,7 @@ const Post = ({ params }: PostProps) => {
   return (
     <div>
       <h2>Post id : {params.id}</h2>
+      <p className="text-yellow-400">{Date.now()}</p>
     </div>
   );
 };
