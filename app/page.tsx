@@ -1,19 +1,22 @@
-export const revalidate = 5 ; // 5 second
+import { readData } from "@/server/action";
+import { todo } from "node:test";
+
+export const revalidate = 5; // 5 second
 // export const dynamic = 'force-dynamic'
 
 export default async function Home() {
-
-
+  const { error, success } = await readData();
+  if (error) {
+    throw new Error(error);
+  }
+  console.log(success);
 
   return (
     <div>
-      <h2 className="text-yellow-600">{Date.now()}</h2>
-      <h1>Home page</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem quas modi
-        atque quidem? Aut, voluptate repudiandae ipsam ex tenetur architecto nam
-        sit natus magnam adipisci recusandae et ipsa tempora dignissimos?
-      </p>
+      <h1>Todos</h1>
+      {success?.map((todo) => (
+          <p key={todo.id}>{todo.title}</p>
+      ))}
     </div>
   );
 }

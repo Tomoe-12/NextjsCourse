@@ -22,10 +22,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  dashboard
+  // dashboard
 }: Readonly<{
   children: React.ReactNode;
-  dashboard : React.ReactNode;
+  // dashboard : React.ReactNode;
 }>) {
   const isAdmin = false 
   return (
@@ -34,12 +34,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav className="underline space-x-4">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/about"}>About</Link>
+          <Link href={""}>Home</Link>
+          <Link href={"/about"}>about</Link>
           <Link href={"/settings"}>Settings</Link>
         </nav>
         {children}
-        {isAdmin ? dashboard : ''}
+        {/* {isAdmin ? dashboard : ''} */}
       </body>
     </html>
   );
