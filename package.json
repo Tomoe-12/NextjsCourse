@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate --config drizzle.config.ts",
+    "db:push": ""
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "hello-world": "file:",
     "next": "14.2.14",
     "react": "^18",
