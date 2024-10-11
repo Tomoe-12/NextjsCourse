@@ -7,7 +7,7 @@ const CustomButton = ({ label }: { label: string }) => {
   const { pending } = useFormStatus();
   return (
     <button
-      className="border border-white p-2 block mt-2 disabled:border-gray-600 disabled:text-gray-600"
+      className="border-2 border-blue-600 text-white  bg-blue-600 text-sm font-medium rounded-md p-2 block mt-2 disabled:bg-transparent disabled:border-gray-600 disabled:text-gray-600"
       disabled={pending}
       type="submit"
     >

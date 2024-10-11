@@ -7,17 +7,17 @@ import { revalidate } from "@/app/page";
 import { revalidatePath } from "next/cache";
 import { eq } from "drizzle-orm";
 
-export const readData = async () => {
-  const todos = await db.query.todos.findMany();
+export const getPosts = async () => {
+  const posts = await db.query.posts.findMany();
 
-  if (!todos) {
-    return { error: "No todos ," };
+  if (!posts) {
+    return { error: "No Posts ," };
   }
 
-  return { success: todos };
+  return { success: posts };
 };
 
-export const createData = async (formData: FormData) => {
+export const createData : any = async (formData: FormData) => {
   const todoTitle = formData.get("todoTitle")?.toString();
   if (!todoTitle) {
     return { error: "no todo title found ! " };
@@ -28,7 +28,7 @@ export const createData = async (formData: FormData) => {
   return { success: "todo created " };
 };
 
-export const deleteData = async (formData: FormData) => {
+export const deleteData : any = async (formData: FormData) => {
   const id = formData.get("id");
   console.log("id", id);
 
@@ -40,7 +40,7 @@ export const deleteData = async (formData: FormData) => {
   return { success: "Todo deleted " };
 };
 
-export const updateData = async (formData: FormData) => {
+export const updateData : any = async (formData: FormData) => {
   console.log(formData);
   
   const todoTitle = formData.get("todoTitle")?.toString();
