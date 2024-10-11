@@ -1,6 +1,7 @@
 import { createData, deleteData, readData } from "@/server/action";
 import { todo } from "node:test";
 import CustomButton from "./components/custom-button";
+import Link from "next/link";
 
 export const revalidate = 5; // 5 second
 // export const dynamic = 'force-dynamic'
@@ -10,7 +11,7 @@ export default async function Home() {
   if (error) {
     throw new Error(error);
   }
-  console.log(success);
+  // console.log(success);
 
   return (
     <div>
@@ -19,15 +20,16 @@ export default async function Home() {
         <div key={todo.id}>
           <p>{todo.title}</p>
           <form action={deleteData}>
-            <input type="hidden" name="id" value={todo.id} />
+            <input type="hidden" name="id" value={todo.id} readOnly/>
             <button className="text-red-600 border border-red-600" type="submit">Delete</button>
           </form>
+          <Link href={`/update/${todo.id}`} className="underline text-green-600">Edit</Link>
         </div>
       ))}
       <div className="mt-2">
         <form action={createData}>
           <input type="text" name="todoTitle" className="text-black" />
-          <CustomButton />
+          <CustomButton label="Create New Todo" />
         </form>
       </div>
     </div>
