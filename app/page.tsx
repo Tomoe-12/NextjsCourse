@@ -1,4 +1,4 @@
-import { createData, readData } from "@/server/action";
+import { createData, deleteData, readData } from "@/server/action";
 import { todo } from "node:test";
 import CustomButton from "./components/custom-button";
 
@@ -16,12 +16,18 @@ export default async function Home() {
     <div>
       <h1>Todos</h1>
       {success?.map((todo) => (
-        <p key={todo.id}>{todo.title}</p>
+        <div key={todo.id}>
+          <p>{todo.title}</p>
+          <form action={deleteData}>
+            <input type="hidden" name="id" value={todo.id} />
+            <button className="text-red-600 border border-red-600" type="submit">Delete</button>
+          </form>
+        </div>
       ))}
       <div className="mt-2">
         <form action={createData}>
           <input type="text" name="todoTitle" className="text-black" />
-          <CustomButton/>
+          <CustomButton />
         </form>
       </div>
     </div>
