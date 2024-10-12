@@ -1,24 +1,17 @@
-import { deleteData } from "@/server/action";
 import Link from "next/link";
 import React from "react";
 
 type BlogCardProps = {
     id : number ,
-    title : string
+    title : string,
+    description : string ,
 }
-const BlogCard = ({id,title} : BlogCardProps ) => {
+
+const BlogCard = ({id,title,description} : BlogCardProps ) => {
   return (
-    <div key={id}>
-      <p>{title}</p>
-      <form action={deleteData}>
-        <input type="hidden" name="id" value={id} readOnly />
-        <button className="text-red-600 border border-red-600" type="submit">
-          Delete
-        </button>
-      </form>
-      <Link href={`/update/${id}`} className="underline text-green-600">
-        Edit
-      </Link>
+    <div key={id} className="mb-5 border-b border-b-gray-300 pb-4">
+      <p className="font-bold text-xl">{title}</p>
+      <p className="text-gray-500">{description.slice(0,120)}<Link href={`/post/${id}`} className="font-medium text-blue-600 ms-1"> see more ...</Link></p>
     </div>
   );
 };

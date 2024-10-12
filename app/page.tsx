@@ -17,14 +17,14 @@ export default async function Home() {
 
   return (
     <main className="mt-4">
-      <h1 className="text-blue-600 text-xl font-bold">Recent Blogs</h1>
+      <h1 className="title-text mb-4">Recent Blogs</h1>
       {
         success?.length == 0 && (
           <p className="text-sm font-medium">No Posts to show </p>
         )
       }
       {success?.map((post) => (
-        <BlogCard id={post.id} title={post.title} />
+        <BlogCard id={post.id} title={post.title} description={post.description} />
       ))}
       <div className="mt-2"></div>
     </main>

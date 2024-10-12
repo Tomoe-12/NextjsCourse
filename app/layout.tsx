@@ -33,7 +33,7 @@ Readonly<{
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <nav className="flex items-center justify-between p-2 bg-blue-600 text-white">
-          <h2 className="text-3xl font-bold">BLOGGY</h2>
+          <Link href={'/'} className="text-3xl font-bold">BLOGGY</Link>
             <Link className="p-2 text-blue-600 bg-white rounded-md font-medium text-sm" href={"/create"}>Create</Link>
         </nav>
         <div className="px-2 ">{children}</div>

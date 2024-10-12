@@ -1,28 +1,29 @@
-import { createData } from "@/server/action";
+import { createPost } from "@/server/action";
 import React from "react";
 import CustomButton from "./custom-button";
 
 const CreateForm = () => {
   return (
     <div>
-      <form action={createData}>
+      <form action={createPost}>
         <div className="space-y-4 mt-4 ">
           <input
             placeholder="title....."
             type="text"
-            name="todoTitle"
+            name="title"
             required
-            className="bg-transparent border-2 border-blue-600 rounded-md focus:outline-none p-2 text-black"
+            className="w-full bg-transparent border-2 border-blue-600 rounded-md focus:outline-none p-2 text-black"
           />
-          <input
+          <textarea
             placeholder="description"
-            type="text"
             name="description"
             required
-            className="block bg-transparent border-2 border-blue-600 rounded-md focus:outline-none p-2 text-black"
-          />
+            className="w-full block bg-transparent border-2 border-blue-600 rounded-md focus:outline-none p-2 text-black"
+          ></textarea>
         </div>
-        <CustomButton label="Create New Todo" />
+        <div className="flex justify-end mt-2">
+          <CustomButton label="Create New Post" />
+        </div>
       </form>
     </div>
   );
