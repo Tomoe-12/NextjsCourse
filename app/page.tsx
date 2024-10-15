@@ -1,4 +1,4 @@
-import { createData, deleteData, getPosts } from "@/server/action";
+import { getPosts } from "@/server/action";
 import { todo } from "node:test";
 import CustomButton from "./components/custom-button";
 import Link from "next/link";
@@ -18,13 +18,15 @@ export default async function Home() {
   return (
     <main className="mt-4">
       <h1 className="title-text mb-4">Recent Blogs</h1>
-      {
-        success?.length == 0 && (
-          <p className="text-sm font-medium">No Posts to show </p>
-        )
-      }
+      {success?.length == 0 && (
+        <p className="text-sm font-medium">No Posts to show </p>
+      )}
       {success?.map((post) => (
-        <BlogCard id={post.id} title={post.title} description={post.description} />
+        <BlogCard
+          id={post.id}
+          title={post.title}
+          description={post.description}
+        />
       ))}
       <div className="mt-2"></div>
     </main>
