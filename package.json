@@ -12,6 +12,7 @@
     "db:drop": "drizzle-kit drop --config drizzle.config.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.10.1",
     "drizzle-orm": "^0.34.1",
     "hello-world": "file:",
     "next": "14.2.14",
