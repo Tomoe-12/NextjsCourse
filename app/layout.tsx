@@ -24,7 +24,7 @@ export default function RootLayout({
 }: // dashboard
 Readonly<{
   children: React.ReactNode;
-  // dashboard : React.ReactNode;
+  dashboard : React.ReactNode;
 }>) {
   const isAdmin = false;
   return (
