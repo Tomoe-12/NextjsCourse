@@ -69,7 +69,7 @@ export const updatePost: any = async (formData: FormData) => {
   await db
     .update(posts)
     .set({ title , description })
-    .where(eq(posts.id, id));
+    .where(eq(posts.id, Number(id)));
   revalidatePath("/");
   redirect("/");
 };
