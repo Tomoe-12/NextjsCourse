@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.1",
+    "dotenv": "^16.4.5",
     "drizzle-kit": "^0.25.0",
     "drizzle-orm": "^0.34.1",
     "hello-world": "file:",
@@ -27,5 +28,8 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
